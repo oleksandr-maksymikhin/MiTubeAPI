@@ -1,13 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MiTube.DAL.Entities;
 using MiTube.DAL.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiTube.DAL.Repositories
 {
@@ -69,12 +62,5 @@ namespace MiTube.DAL.Repositories
                 .Include(pl => pl.Videos)
                 .Include(pl => pl.User).ToList());
         }
-
-        //public async Task<Playlist?> GetWatchLaterPlaylistByUserIdAsync(Guid userId)
-        //{
-        //    return await Task.Run(() => FindByCondition(playList => playList.UserId.Equals(userId) && playList.Name.Contains("watch later"))
-        //            .FirstOrDefaultAsync());
-        //}
-
     }
 }

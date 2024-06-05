@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MiTube.BLL.DTO.CommentDTO" Collapsed="true">
+    <Position X="2.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAACAAgAAIAAAAAAAgAgAAAAAAA=</HashCode>
+      <FileName>DTO\CommentDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.InteractionDTO" Collapsed="true">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAEAAAAAAAAAAgAAIAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\InteractionDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.KeyDTO" Collapsed="true">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAASAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\KeyDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.PlaylistDTO" Collapsed="true">
+    <Position X="7.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAIIAAAAAwAACAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\PlaylistDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.PlaylistDTOCreate" Collapsed="true">
+    <Position X="9.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAhAAAAAAAAAAwAACAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\PlaylistDTOCreate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.SubscriptionDTO" Collapsed="true">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\SubscriptionDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.UsercredentialsDTO" Collapsed="true">
+    <Position X="4.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\UsercredentialsDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.UserDTO" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAUDgAAAACAgAAQAIAAAIAQAAAAACCAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\UserDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.UserDTOCreateUpdate" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAIhIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\UserDTOCreateUpdate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.VideoDTO" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgADAAQAIgAiAECAIAACAAAAACAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\VideoDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.VideoDTOCreate" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAjAEAAAAABAAgAACAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\VideoDTOCreate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.DTO.VideoDTOUpdate" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAhAEAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\VideoDTOUpdate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.Infrastructure.BllDependancyProvider" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\BllDependancyProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.BLL.Services.BlobProcessingService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAACAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\BlobProcessingService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTube.BLL.Services.CommentService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAIhICAAAEAAAAAAAAAABgAAAAAAIAAIKA=</HashCode>
+      <FileName>Services\CommentService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTube.BLL.Services.InteractionService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAEAAIgICAAAAAABAAAAAAIBgAAAAAAIAAIIA=</HashCode>
+      <FileName>Services\InteractionService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTube.BLL.Services.PlaylistService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAIAICgAQAAAQAAAAIIIZlAQAAAAIAEIII=</HashCode>
+      <FileName>Services\PlaylistService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTube.BLL.Services.ShowImageService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ShowImageService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTube.BLL.Services.ShowVideoService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Services\ShowVideoService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTube.BLL.Services.SubscriptionService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQCAAAAAIAICAAAAAAAAAAAACAAhAAAAAAIAAIIA=</HashCode>
+      <FileName>Services\SubscriptionService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTube.BLL.Services.UsercredentialsService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAIABCAAAAAAAIBAAAAAAgCAAAQAIAAIIA=</HashCode>
+      <FileName>Services\UsercredentialsService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTube.BLL.Services.UserService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAIAAAAIBIAAAQAAAQgIgAIAAQsAQAAAEMAEIIE=</HashCode>
+      <FileName>Services\UserService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MiTube.BLL.Services.VideoService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAACAAIBoCAACAAABAAAAIAKQgAQAAAAIAEoII=</HashCode>
+      <FileName>Services\VideoService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="MiTube.BLL.Interfaces.IBlobProcessingService" Collapsed="true">
+    <Position X="2.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IBlobProcessingService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.BLL.Interfaces.ICommentService" Collapsed="true">
+    <Position X="4.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAgIAAAAAAAAAAAAAAAAgAAAAAAIAAIKA=</HashCode>
+      <FileName>Interfaces\ICommentService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.BLL.Interfaces.IInteractionService" Collapsed="true">
+    <Position X="6" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAEAAAgIAAAAAAAAAAAAAAAAgAAAAAAIAAIIA=</HashCode>
+      <FileName>Interfaces\IInteractionService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.BLL.Interfaces.IPlaylistService" Collapsed="true">
+    <Position X="7.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAIAAAAAAAAAAAAIIAAhAAAAAAIAAIII=</HashCode>
+      <FileName>Interfaces\IPlaylistService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.BLL.Interfaces.IShowImageService" Collapsed="true">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IShowImageService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.BLL.Interfaces.IShowVideoService" Collapsed="true">
+    <Position X="2.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IShowVideoService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.BLL.Interfaces.ISubscriptionService" Collapsed="true">
+    <Position X="4.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAACAAAAAAAIAAAAAAAAAAAAACAAhAAAAAAIAAIIA=</HashCode>
+      <FileName>Interfaces\ISubscriptionService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.BLL.Interfaces.IUsercredentialsService" Collapsed="true">
+    <Position X="6" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAIAAAAAAAgAAAAQAIAAIIA=</HashCode>
+      <FileName>Interfaces\IUsercredentialsService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.BLL.Interfaces.IUserService" Collapsed="true">
+    <Position X="7.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAABIAAAAAAAAAAAAIAAAgAQAAAAIAAIIA=</HashCode>
+      <FileName>Interfaces\IUserService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.BLL.Interfaces.IVideoService" Collapsed="true">
+    <Position X="9.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAABIAAACAAAAAAAAIACAgAQAAAAIAAIII=</HashCode>
+      <FileName>Interfaces\IVideoService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MiTube.BLL.Infrastructure.InteractionStatusesEnum" Collapsed="true">
+    <Position X="2.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAACAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\InteractionStatusesEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MiTube.BLL.Infrastructure.UserTypeEnum" Collapsed="true">
+    <Position X="4.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\UserTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

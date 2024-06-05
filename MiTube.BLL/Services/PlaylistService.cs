@@ -1,17 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using MiTube.BLL.DTO;
-using MiTube.BLL.Infrastructure;
 using MiTube.BLL.Interfaces;
 using MiTube.DAL.Entities;
 using MiTube.DAL.Interfaces;
-using MiTube.DAL.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
 
 namespace MiTube.BLL.Services
 {
@@ -21,8 +12,6 @@ namespace MiTube.BLL.Services
         private readonly IPlaylistRepository playlistRepository;
         private readonly IUserService userService;
         private readonly IVideoService videoService;
-        //private readonly IUserRepository userRepository;
-        //private readonly IVideoRepository videoRepository;
         private readonly IBlobProcessingService blobProcessingService;
 
         String playlistPosterPublicDefault = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/bee_playlistPosterPublicDefault.jpg";
@@ -30,45 +19,35 @@ namespace MiTube.BLL.Services
         String playlistPosterPrivateWatchLaterDefault = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/bee_playlistPosterPrivateWatchLaterDefault.webp";
 
         Guid guidDefaultEmpty = Guid.Empty;
-        public PlaylistService(IMapper mapper, IPlaylistRepository playlistRepository, IUserService userService, IVideoService videoService, IBlobProcessingService blobProcessingService)
-        //public PlaylistService(IMapper mapper, IPlaylistRepository playlistRepository, UserRepository userRepository, VideoRepository videoRepository, IBlobProcessingService blobProcessingService)
+        public PlaylistService(IMapper mapper, 
+                                IPlaylistRepository playlistRepository, 
+                                IUserService userService, 
+                                IVideoService videoService, 
+                                IBlobProcessingService blobProcessingService)
         {
             this.mapper = mapper;
             this.playlistRepository = playlistRepository;
             this.userService = userService;
             this.videoService = videoService;
-            //this.userRepository = userRepository;
-            //this.videoRepository = videoRepository;
             this.blobProcessingService = blobProcessingService;
         }
 
-        ////done - to test
         public async Task AddVideoAsync(Guid playlistId, Guid videoId)
         {
             Playlist? playlist = await playlistRepository.GetByIdAsync(playlistId);
             if(playlist == null) { return; }
-
             VideoDTO videoDto = await videoService.GetByIdAsync(videoId, guidDefaultEmpty);
             if (videoDto == null) { return; }
-
-            //Video video = await videoRepository.GetByIdAsync(videoId);
-            //if (video == null) { return; }
-
             Video video = mapper.Map<VideoDTO, Video>(videoDto);
             playlistRepository.AddVideo(playlist.Id, video);
         }
 
-       
-
-        //done - to test
         public async Task<PlaylistDTO?> CreateAsync(PlaylistDTOCreate playlistDtoCreate)
         {
             UserDTO? user = await userService.GetByIdAsync(playlistDtoCreate.UserId);
             if (user == null) return null;
-
             playlistDtoCreate.Id = Guid.NewGuid();
             Playlist playlist = mapper.Map<Playlist>(playlistDtoCreate);
-
             if (playlistDtoCreate.PosterFile == null && playlistDtoCreate.IsPublic == true)
             {
                 playlist.PosterUrl = playlistPosterPublicDefault;
@@ -82,17 +61,13 @@ namespace MiTube.BLL.Services
                 String posterUrl = await blobProcessingService.UploadFile(playlistDtoCreate.PosterFile);
                 playlist.PosterUrl = posterUrl;
             }
-            
             await playlistRepository.CreateAsync(playlist);
-
             return mapper.Map<Playlist, PlaylistDTO>(playlist);
         }
 
-        //done - to test
         public async Task DeleteAsync(Guid id)
         {
             PlaylistDTO? playlistDto = await GetByIdAsync(id);
-
             if (playlistDto != null)
             {
                 if (playlistDto.PosterUrl != null)
@@ -108,7 +83,6 @@ namespace MiTube.BLL.Services
             throw new NotImplementedException();
         }
 
-        //done - to test
         public async Task<IEnumerable<PlaylistDTO>> GetAllAsync()
         {
             IEnumerable<Playlist> playlists = await playlistRepository.GetAllAsync();
@@ -117,7 +91,6 @@ namespace MiTube.BLL.Services
                 mapper.Map< IEnumerable <Playlist>, IEnumerable <PlaylistDTO>>(playlists);
         }
 
-        //done - to test
         public async Task<IEnumerable<PlaylistDTO>> GetAllWithDetailsAsync(Guid id)
         {
             IEnumerable<Playlist> playlists = await playlistRepository.GetAllWithDetailsAsync();
@@ -129,11 +102,9 @@ namespace MiTube.BLL.Services
             return playlistDtos;
         }
 
-        //done - to test
         public async Task<PlaylistDTO?> GetByIdAsync(Guid id)
         {
             Playlist? playlist = await playlistRepository.GetByIdAsync(id);
-
             return playlist == null ? null : mapper.Map<Playlist, PlaylistDTO>(playlist);
         }
 
@@ -148,7 +119,6 @@ namespace MiTube.BLL.Services
             return playlistDto;
         }
 
-        //done - to test
         public async Task<IEnumerable<PlaylistDTO>> GetByUserIdWithDetailsAsync(Guid userId)
         {
             IEnumerable<Playlist> playlists = await playlistRepository.GetByUserIdWithDetailsAsync(userId);
@@ -160,43 +130,24 @@ namespace MiTube.BLL.Services
             return playlistDtos;
         }
 
-        //public async Task<Guid?> GetWatchLaterPlaylistIdAsync(Guid userId)
-        //{
-        //    Playlist? playlist = await playlistRepository.GetWatchLaterPlaylistByUserIdAsync(userId);
-        //    if (playlist == null)
-        //    {
-        //        return null;
-        //    }
-        //    Guid playlistDtoId = playlist.Id;
-        //    return playlistDtoId;
-        //}
-
-        //done - to test
         public async Task<IEnumerable<VideoDTO>> GetVideosByIdAsync(Guid id)
         {
             Playlist? playlist = await playlistRepository.GetByIdWithVideosAsync(id);
             if (playlist == null) return Enumerable.Empty<VideoDTO>();
-
-
             IEnumerable<Video> videos = playlist.Videos;
-            //IEnumerable<PlaylistDTO> playlistDtos = mapper.Map<IEnumerable<Playlist>, IEnumerable<PlaylistDTO>>(playlists);
             List<VideoDTO> videoDtos = new List<VideoDTO>();
             foreach (Video video in videos)
             {
                 VideoDTO videoDto = await videoService.GetByIdWithDetailsAsync(video.Id, guidDefaultEmpty);
                 videoDtos.Add(videoDto);
             }
-            //return mapper.Map<IEnumerable<VideoDTO>>(videos);
             return videoDtos;
         }
 
-        //done - to test
         public async Task<PlaylistDTO?> UpdateAsync(PlaylistDTOCreate playlistDTOUpdate)
         {
             Playlist? inbound = await playlistRepository.GetByIdWithUserAsync(playlistDTOUpdate.Id);
-
             Playlist incoming = mapper.Map<Playlist>(playlistDTOUpdate);
-
             if (playlistDTOUpdate.PosterFile != null)
             {
                 await blobProcessingService.RemoveFile(inbound.PosterUrl);
@@ -206,9 +157,7 @@ namespace MiTube.BLL.Services
             {
                 incoming.PosterUrl = inbound.PosterUrl;
             }
-
             if (inbound == null || incoming.UserId != inbound.UserId) return null;
-
             return mapper.Map<PlaylistDTO>(
                     inbound.UserId != incoming.UserId ?
                     inbound :
@@ -216,13 +165,10 @@ namespace MiTube.BLL.Services
                     );
         }
 
-
-        //private methods to convert Playlist into PlaylistDTO with calculated properties
         private PlaylistDTO CreatePlaylistDTOFromPlaylistType(Playlist playlist)
         {
             PlaylistDTO playlistDTO = mapper.Map<Playlist, PlaylistDTO>(playlist);
             playlistDTO.VideoQuantity = playlist.Videos.Count();
-
             return playlistDTO;
         }
 
@@ -237,7 +183,5 @@ namespace MiTube.BLL.Services
             }
             return playlistDtos;
         }
-
-
     }
 }

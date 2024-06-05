@@ -1,12 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MiTube.API.Infrastructure;
 using MiTube.BLL.DTO;
 using MiTube.BLL.Interfaces;
 using MiTube.BLL.Services;
-using System.Collections.Generic;
-using System.Security.Policy;
 
 namespace MiTube.API.Controllers
 {
@@ -15,8 +12,7 @@ namespace MiTube.API.Controllers
     public class SubscriptionsController : ControllerBase
     {
         private readonly ISubscriptionService _subscriptionService;
-        //private readonly ILogger<SubscriptionsController> _logger;
-
+ 
         public SubscriptionsController(SubscriptionService subscriptionService)
         {
             _subscriptionService = subscriptionService;
@@ -43,7 +39,6 @@ namespace MiTube.API.Controllers
             {
                 return NotFound();
             }
-  
             return Ok(subscriptionDto);
         }
 
@@ -56,7 +51,6 @@ namespace MiTube.API.Controllers
             {
                 return NotFound();
             }
-
             return Ok(false);
         }
 
@@ -85,17 +79,14 @@ namespace MiTube.API.Controllers
         }
 
         // PUT: api/v1/Subscriptions/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         private async Task<IActionResult> PutAsync([FromForm] String sessionId, Guid id, [FromForm] SubscriptionDTO subscriptionDtoToUpdate)
         {
-            //check User authorisation
             bool sessionIdLogedIn = HttpContext.Session.CheckSessionId(sessionId);
             if (!sessionIdLogedIn)
             {
                 return StatusCode(StatusCodes.Status401Unauthorized);
             }
-
             if (id != subscriptionDtoToUpdate.Id)
             {
                 return BadRequest();
@@ -114,7 +105,6 @@ namespace MiTube.API.Controllers
                 else
                 {
                     return BadRequest("Server error in Subscription Update");
-                    //throw;
                 }
             }
             if (SubscriptionDtoUpdated == null)
@@ -126,17 +116,14 @@ namespace MiTube.API.Controllers
         }
 
         // POST: api/v1/Subscriptions
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<SubscriptionDTO>> PostAsync([FromForm] String sessionId, [FromForm] SubscriptionDTO subscriptionDtoToCreate)
         {
-            //check User authorisation
             bool sessionIdLogedIn = HttpContext.Session.CheckSessionId(sessionId);
             if (!sessionIdLogedIn)
             {
                 return StatusCode(StatusCodes.Status401Unauthorized);
             }
-
             SubscriptionDTO? subscriptionDtoCreated;
             try
             {
@@ -151,14 +138,12 @@ namespace MiTube.API.Controllers
                 return BadRequest("Publisher or Subscriber does not exist");
             }
             return Ok(subscriptionDtoCreated);
-            //return CreatedAtAction("GetLike", new { id = like.Id }, like);
         }
 
         // DELETE: api/v1/Subscriptions/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync([FromBody] String sessionId, Guid id)
         {
-            //check User authorisation
             bool sessionIdLogedIn = HttpContext.Session.CheckSessionId(sessionId);
             if (!sessionIdLogedIn)
             {
@@ -176,7 +161,6 @@ namespace MiTube.API.Controllers
                     return NotFound();
                 }
                 return NoContent();
-                //throw;
             }
 
             return NoContent();

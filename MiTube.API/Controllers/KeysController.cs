@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.AspNetCore.Mvc;
 using MiTube.API.Infrastructure;
 using MiTube.BLL.DTO;
-using MiTube.BLL.Interfaces;
 
 namespace MiTube.API.Controllers
 {
@@ -16,7 +13,6 @@ namespace MiTube.API.Controllers
         private readonly String _key3;
         private readonly String _key4;
 
-        //public KeysController(string key1, string key2)
         public KeysController()
         {
             _key1 = "service_enru1xe";

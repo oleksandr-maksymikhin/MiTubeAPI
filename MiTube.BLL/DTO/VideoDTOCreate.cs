@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using MiTube.DAL.Entities;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace MiTube.BLL.DTO
 {
     public class VideoDTOCreate
     {
-        public Guid UserId { get; set; }            //??????? userId or User
+        public Guid UserId { get; set; }
         public String Title { get; set; }
         public IFormFile VideoFile { get; set; }
         public IFormFile PosterFile { get; set; }

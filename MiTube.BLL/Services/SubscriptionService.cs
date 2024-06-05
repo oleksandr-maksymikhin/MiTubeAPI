@@ -1,15 +1,8 @@
 ﻿using AutoMapper;
 using MiTube.BLL.DTO;
-using MiTube.BLL.Infrastructure;
 using MiTube.BLL.Interfaces;
 using MiTube.DAL.Entities;
 using MiTube.DAL.Interfaces;
-using MiTube.DAL.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiTube.BLL.Services
 {
@@ -99,22 +92,17 @@ namespace MiTube.BLL.Services
 
     public async Task<SubscriptionDTO?> CreateAsync(SubscriptionDTO subscriptionDtoToCreate)
         {
-            //check Subscription exist
             SubscriptionDTO? subscriptionDtoExist = await GetByPublisherIdSubscriberIdAsync(subscriptionDtoToCreate.PublisherId, subscriptionDtoToCreate.SubscriberId);
             if (subscriptionDtoExist != null)
             {
                 return subscriptionDtoExist;
             }
-
-            //check UserId and VideoId
             UserDTO? userSubscriberDto = await userService.GetByIdAsync(subscriptionDtoToCreate.SubscriberId);
             UserDTO? userPublisherDto = await userService.GetByIdAsync(subscriptionDtoToCreate.PublisherId);
             if (userSubscriberDto == null || userPublisherDto == null)
             {
                 return null;
-                //return new SubscriptionDTO();
             }
-
             subscriptionDtoToCreate.Id = Guid.NewGuid();
             Subscription subscriptionToCreate = mapper.Map<SubscriptionDTO, Subscription>(subscriptionDtoToCreate);
             await subscriptionRepository.CreateAsync(subscriptionToCreate);
@@ -122,17 +110,13 @@ namespace MiTube.BLL.Services
             return subscriptionDtoCreated;
         }
 
-
         public async Task<SubscriptionDTO?> UpdateAsync(Guid id, SubscriptionDTO subscriptionDto)
         {
             SubscriptionDTO? subscriptionDtoExist = await GetByIdAsync(subscriptionDto.Id);
-
             if (subscriptionDtoExist == null)
             {
                 return null;
-                //return new InteractionDTO();
             }
-
             Subscription subscriptionToUpdate = mapper.Map<SubscriptionDTO, Subscription>(subscriptionDtoExist);
             Subscription subscriptionUpdated = await subscriptionRepository.UpdateAsync(subscriptionToUpdate);
             SubscriptionDTO subscriptionDtoUpdated = mapper.Map<Subscription, SubscriptionDTO>(subscriptionUpdated);

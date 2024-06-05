@@ -34,8 +34,6 @@ namespace MiTube.DAL.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //BuildDateFields(modelBuilder);
-
             modelBuilder.Entity<User>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
             modelBuilder.Entity<Usercredentials>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
             modelBuilder.Entity<Video>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
@@ -46,14 +44,13 @@ namespace MiTube.DAL.Context
             modelBuilder.Entity<Playlist>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
             modelBuilder.Entity<PremiumUser>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
 
-
             modelBuilder.Entity<Video>().Property(x => x.Date).HasDefaultValueSql("getdate()");
             modelBuilder.Entity<Comment>().Property(x => x.Timestamp).HasDefaultValueSql("getdate()");
             modelBuilder.Entity<Playlist>().Property(x => x.Date).HasDefaultValueSql("getdate()");
             modelBuilder.Entity<Interaction>().Property(x => x.Date).HasDefaultValueSql("getdate()");
 
 
-        //EF to create relations in Database Sunscriber - User - Publisher
+        //EF to create relations in Database Subscriber - Publisher
         modelBuilder.Entity<Subscription>(entity =>
             {
                 entity.ToTable("Subscription");
@@ -70,28 +67,13 @@ namespace MiTube.DAL.Context
             });
 
             //seed initial data
-            //UserType
-            modelBuilder.Entity<UserType>().HasData(
-               new UserType()
-               {
-                   Id = 1,
-                   Description = "Administrator",
-               },
-               new UserType()
-               {
-                   Id = 2,
-                   Description = "Registered user",
-               }
-            );
-
             Guid adminGuid = Guid.NewGuid();
             Guid homerGuid = Guid.NewGuid();
             Guid bardGuid = Guid.NewGuid();
-            //test
             Guid test1UserGuid = Guid.NewGuid();
+
             String userPosterDefault = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/bee_userPosterDefault.jpg";
             String userBannerDefault = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/bee_userBannerDefault.jpg";
-
 
             Guid terminator_1_Guid = Guid.NewGuid();
             Guid terminator_2_Guid = Guid.NewGuid();
@@ -103,10 +85,6 @@ namespace MiTube.DAL.Context
             Guid avatar_1_Guid = Guid.NewGuid();
             Guid avatar_2_Guid = Guid.NewGuid();
 
-            //presentation
-            Guid beeVi_Guid = Guid.NewGuid();
-            Guid beeVi_Copy_Guid = Guid.NewGuid();
-
             //test
             Guid matrix_1_Guid = Guid.NewGuid();
             Guid matrix_2_Guid = Guid.NewGuid();
@@ -115,14 +93,12 @@ namespace MiTube.DAL.Context
             Guid interactionTerminator_2_Guid_2 = Guid.NewGuid();
             Guid interactionTerminator_1_Guid_1 = Guid.NewGuid();
             Guid interactionTerminator_1_Guid_2 = Guid.NewGuid();
-            //test
             Guid interactionTest1Matrix_1_Guid = Guid.NewGuid();
             Guid interactionTest1Terminator_1_Guid = Guid.NewGuid();
 
             Guid commentTerminator_2_Guid_1 = Guid.NewGuid();
             Guid commentTerminator_2_Guid_2 = Guid.NewGuid();
             Guid commentTerminator_2_Guid_3 = Guid.NewGuid();
-            //test
             Guid commentTest1Matrix_1_Guid = Guid.NewGuid();
             Guid commentTest1Terminator_1_Guid = Guid.NewGuid();
 
@@ -135,7 +111,6 @@ namespace MiTube.DAL.Context
             Guid bardDefaultPublicPlaylistGuid = Guid.NewGuid();
             Guid bardDefaultPrivatePlaylistGuid = Guid.NewGuid();
             Guid bardDefaultPrivateWatchLaterPlaylistGuid = Guid.NewGuid();
-            //test
             Guid test1DefaultPublicPlaylistGuid = Guid.NewGuid();
             Guid test1DefaultPrivatePlaylistGuid = Guid.NewGuid();
             Guid test1DefaultPrivateWatchLaterPlaylistGuid = Guid.NewGuid();
@@ -149,16 +124,27 @@ namespace MiTube.DAL.Context
             String playlistPosterPublicDefault = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/bee_playlistPosterPublicDefault.jpg";
             String playlistPosterPrivateDefault = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/bee_playlistPosterPrivateDefault.jpg";
             String playlistPosterPrivateWatchLaterDefault = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/bee_playlistPosterPrivateWatchLaterDefault.webp";
-            //test
-
 
             Guid suscription_1 = Guid.NewGuid();
             Guid suscription_2 = Guid.NewGuid();
             Guid suscription_3 = Guid.NewGuid();
             Guid suscription_4 = Guid.NewGuid();
-            //test
             Guid suscription_Test1ToBart = Guid.NewGuid();
             Guid suscription_BartToTest1 = Guid.NewGuid();
+
+            //UserType
+            modelBuilder.Entity<UserType>().HasData(
+               new UserType()
+               {
+                   Id = 1,
+                   Description = "Administrator",
+               },
+               new UserType()
+               {
+                   Id = 2,
+                   Description = "Registered user",
+               }
+            );
 
             //User
             modelBuilder.Entity<User>().HasData(
@@ -294,17 +280,6 @@ namespace MiTube.DAL.Context
                   IsPublic = false,
                   Duration = 20
               },
-              new Video()
-              {
-                  Id = beeVi_Guid,
-                  UserId = bardGuid,
-                  Title = "BeeVi",
-                  VideoUrl = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/BeeVi_Presentation_Video.mp4",
-                  PosterUrl = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/BeeVi_Presentation_Poster.jpg",
-                  Description = "BeeVi Presentation",
-                  IsPublic = true,
-                  Duration = 32
-              },
 
               new Video()
               {
@@ -327,17 +302,6 @@ namespace MiTube.DAL.Context
                   Description = "Avatar_2 trailer",
                   IsPublic = true,
                   Duration = 15
-              },
-              new Video()
-              {
-                  Id = beeVi_Copy_Guid,
-                  UserId = homerGuid,
-                  Title = "BeeVi_Copy",
-                  VideoUrl = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/BeeVi_Presentation_Video%20-%20Copy.mp4",
-                  PosterUrl = "https://oleksandrmaksymikhin.blob.core.windows.net/mitube/BeeVi_Presentation_Poster%20-%20Copy.jpg",
-                  Description = "BeeVi Presentation_Copy",
-                  IsPublic = false,
-                  Duration = 32
               },
 
               new Video()
@@ -575,8 +539,6 @@ namespace MiTube.DAL.Context
 
                 new { PlaylistsId = homerDefaultPublicPlaylistGuid, VideosId = avatar_1_Guid },
                 new { PlaylistsId = homerDefaultPublicPlaylistGuid, VideosId = avatar_2_Guid },
-
-                new { PlaylistsId = homerDefaultPrivatePlaylistGuid, VideosId = beeVi_Copy_Guid },
 
                 new { PlaylistsId = test1DefaultPublicPlaylistGuid, VideosId = matrix_1_Guid },
                 new { PlaylistsId = test1DefaultPrivatePlaylistGuid, VideosId = matrix_2_Guid },

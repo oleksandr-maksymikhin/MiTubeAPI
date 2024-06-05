@@ -1,35 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MiTube.DAL.Entities;
 using MiTube.DAL.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiTube.DAL.Repositories
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
-    //public class UserRepository : IUserRepository<User>
     {
         public UserRepository(DbContext context) : base(context)
         {
         }
-
-        //public User GetById(Guid id)
-        //{
-        //    return dbSet
-        //        .AsNoTracking()
-        //        .FirstOrDefault(t => t.Id == id);
-        //}
-
-        //public async Task<User> GetByIdAsync(Guid id)
-        //{
-        //    //return await dbSet.FindAsync(id);
-        //    return await dbSet
-        //        .AsNoTracking()
-        //        .FirstOrDefaultAsync(t => t.Id == id);
-        //}
 
         public async Task<IEnumerable<User>> GetAllWithDetailsAsync()
         {
@@ -85,8 +64,5 @@ namespace MiTube.DAL.Repositories
                     .Include(ut => ut.UserType)
                     .Include(s => s.Subscriptions).ToList());
         }
-
-
-
     }
 }

@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using MiTube.BLL.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MiTube.BLL.DTO;
 
 namespace MiTube.BLL.Interfaces
 {
@@ -17,11 +11,9 @@ namespace MiTube.BLL.Interfaces
         public Task<IEnumerable<VideoDTO>> GetByUserIdWithDetailsAsync(Guid userPublisherId, Guid userId);
         public Task<IEnumerable<VideoDTO>> SearchVideoAsync(String search, Guid userId);
         public Task<IEnumerable<VideoDTO>> SearchVideoWithDetailsAsync(String? search, Guid userId);
-        //Task<VideoDTO> CreateAsync(VideoDTO videoDto);
         public Task<VideoDTO> CreateAsync(VideoDTOCreate videoDtoCreate);
         public Task<VideoDTO> UpdateAsync(Guid id, VideoDTOUpdate videoDtoUpdate);
         public Task<VideoDTO> DeleteAsync(Guid id);
-
         public Task<IEnumerable<VideoDTO>> SearchAsync(string search);
         public Task DisposeAsync();
     }

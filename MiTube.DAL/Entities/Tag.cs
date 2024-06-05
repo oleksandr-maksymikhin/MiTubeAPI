@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MiTube.DAL.Entities
@@ -7,7 +6,6 @@ namespace MiTube.DAL.Entities
     {
         [Required, StringLength(64)]
         public String Name { get; set; }
-
         virtual public ICollection<Video> Videos { get; set; }
     }
 }

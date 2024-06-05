@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MiTube.BLL.Interfaces;
 
 namespace MiTube.API.Controllers
@@ -24,7 +23,6 @@ namespace MiTube.API.Controllers
             {
                 return BadRequest();
             }
-
             try
             {
                 Stream stream = await _showImageService.ShowImageByBlobUrl(url);
@@ -33,7 +31,6 @@ namespace MiTube.API.Controllers
             }
             catch (Exception)
             {
-                //throw;
                 return StatusCode(500, "Internal Server Error");
             }
         }

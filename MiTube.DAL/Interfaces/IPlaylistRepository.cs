@@ -1,9 +1,4 @@
 ﻿using MiTube.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiTube.DAL.Interfaces
 {
@@ -16,6 +11,5 @@ namespace MiTube.DAL.Interfaces
         public Task<Playlist?> GetByIdWithEverythingAsync(Guid id);
         public void AddVideo(Guid id, Video video);
         public Task<IEnumerable<Playlist>> GetByUserIdWithDetailsAsync(Guid userPublisherId);
-        //public Task<Playlist?> GetWatchLaterPlaylistByUserIdAsync(Guid userId);
     }
 }

@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -23,7 +22,6 @@ namespace MiTube.DAL.Entities
         public bool IsPublic { get; set; }
         public DateTime? Date { get; set; }
         public int Duration { get; set; }
-
 
         //properties navigation
         virtual public ICollection<Comment>? Comments { get; set; }

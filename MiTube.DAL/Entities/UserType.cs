@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MiTube.DAL.Entities
@@ -7,7 +6,6 @@ namespace MiTube.DAL.Entities
     {
         [Key]
         public int Id { get; set; }
-
         [Required]
         public String Description { get; set; }
     }

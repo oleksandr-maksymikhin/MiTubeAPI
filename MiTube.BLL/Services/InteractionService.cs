@@ -10,11 +10,6 @@ using MiTube.BLL.Interfaces;
 using MiTube.DAL.Entities;
 using MiTube.DAL.Interfaces;
 using MiTube.DAL.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiTube.BLL.Services
 {
@@ -81,23 +76,19 @@ namespace MiTube.BLL.Services
 
         public async Task<InteractionDTO> CreateAsync(InteractionDTO interactionDtoToCreate)
         {
-            //check Interaction exist
             InteractionDTO? interactionDtoExist = await GetByUserIdVideoIdAsync(interactionDtoToCreate.UserId, interactionDtoToCreate.VideoId);
             if (interactionDtoExist != null)
             {
-                //return interactionDtoExist;
                 interactionDtoToCreate.Id = interactionDtoExist.Id;
                 InteractionDTO interactionDtoUpdated = await UpdateAsync(interactionDtoToCreate.Id, interactionDtoToCreate);
                 return interactionDtoUpdated;
             }
 
-            //check UserId and VideoId
             UserDTO? userDto = await userService.GetByIdAsync(interactionDtoToCreate.UserId);
             VideoDTO? videoDto = await videoService.GetByIdAsync(interactionDtoToCreate.VideoId, guidDefaultEmpty);
             
             if (userDto == null || videoDto == null)
             {
-                //return null;
                 return new InteractionDTO();
             }
 
@@ -109,35 +100,13 @@ namespace MiTube.BLL.Services
             return interactionDtoCreated;
         }
 
-        //////Create Interaction "view" once authorized user start to view the video
-        /////Do not need this method because we moved Voew counter in InteractionController and POST views
-        ///// !!!!!!!!!!!!!!!!!!!!
-        //public async Task CreateInteractionViewAsync(Guid userId, Guid videoId)
-        //{
-        //    InteractionDTO interactionExist = await GetByUserIdVideoIdAsync(userId, videoId);
-        //    if (interactionExist == null)
-        //    {
-        //        InteractionDTO createInteraction = new InteractionDTO();
-        //        createInteraction.Id = Guid.NewGuid();
-        //        createInteraction.UserId = userId;
-        //        createInteraction.VideoId = videoId;
-        //        createInteraction.Actionstate = (int)InteractionStatusesEnum.viewed;
-        //        InteractionDTO createdInteraction = await CreateAsync(createInteraction);
-        //    }
-        //}
-
         public async Task<InteractionDTO> UpdateAsync(Guid id, InteractionDTO interactionDtoToUpdate)
         {
             InteractionDTO interactionDtoExist = await GetByIdAsync(interactionDtoToUpdate.Id);
 
-
-            //UserDTO? userDto = await userService.GetByIdAsync(interactionDtoToUpdate.UserId);
-            //VideoDTO? videoDto = await videoService.GetByIdAsync(interactionDtoToUpdate.VideoId);
-            //if (interactionDtoExist == null || userDto == null || videoDto == null)
             if (interactionDtoExist == null)
             {
                 return null;
-                //return new InteractionDTO();
             }
 
             if (interactionDtoToUpdate.Actionstate == interactionDtoExist.Actionstate)
@@ -166,34 +135,5 @@ namespace MiTube.BLL.Services
         {
             throw new NotImplementedException();
         }
-
-        //public async Task<IEnumerable<InteractionDTO>> FindInteractionByUserIdAsync(Guid userId)
-        //{
-        //    IEnumerable<DAL.Entities.Interaction> interactionsByUserId = interactionRepository.FindByCondition(interaction => interaction.UserId == userId);
-
-        //    IEnumerable<InteractionDTO> interactionsDtoByUserId = mapper.Map<IEnumerable<DAL.Entities.Interaction>, IEnumerable<InteractionDTO>>(interactionsByUserId);
-
-        //    return interactionsDtoByUserId;
-        //}
-
-        //public async Task<IEnumerable<InteractionDTO>> FindInteractionByVideoIdAsync(Guid videoId)
-        //{
-        //    IEnumerable<DAL.Entities.Interaction> interactionsByVideoId = interactionRepository.FindByCondition(interaction => interaction.VideoId == videoId);
-
-        //    IEnumerable<InteractionDTO> interactionsDtoByVideoId = mapper.Map<IEnumerable<DAL.Entities.Interaction>, IEnumerable<InteractionDTO>>(interactionsByVideoId);
-
-        //    return interactionsDtoByVideoId;
-        //}
-
-        //public async Task<IEnumerable<InteractionDTO>> FindInteractionByUserIdVideoIdAsync(Guid userId, Guid videoId)
-        //{
-        //    IEnumerable<DAL.Entities.Interaction> interactionsByUserId = interactionRepository.FindByCondition(interaction => interaction.UserId == userId && interaction.VideoId == videoId);
-
-        //    IEnumerable<InteractionDTO> interactionsDtoByUserId = mapper.Map<IEnumerable<DAL.Entities.Interaction>, IEnumerable<InteractionDTO>>(interactionsByUserId);
-
-        //    return interactionsDtoByUserId;
-        //}
-
-
     }
 }

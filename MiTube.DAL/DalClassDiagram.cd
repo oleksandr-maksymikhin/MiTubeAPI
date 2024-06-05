@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MiTube.DAL.Context.MiTubeAPIContext" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAARAAAEAYAgAAAAAAAAAAAAGAAACAAAAAAwAAAAAAg=</HashCode>
+      <FileName>Context\MiTubeAPIContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.Comment" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAACAAgAAIAAAAAAAgAgAAAAAAg=</HashCode>
+      <FileName>Entities\Comment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.Interaction" Collapsed="true">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAgAAIAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Interaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.Model" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Model.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.Playlist" Collapsed="true">
+    <Position X="16.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAgAAAAIAAAAAwAACAAAAABAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\Playlist.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.PremiumUser" Collapsed="true">
+    <Position X="18.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAgAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\PremiumUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.Subscription" Collapsed="true">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAACCAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Subscription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.Tag" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.User" Collapsed="true">
+    <Position X="12" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAARAAAAAAIgAAQAIAAAAAQACAAACAAAAAA0AAAAIAg=</HashCode>
+      <FileName>Entities\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.Usercredentials" Collapsed="true">
+    <Position X="14.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Usercredentials.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.UserType" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\UserType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Entities.Video" Collapsed="true">
+    <Position X="21" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAgAiAEAAIAAAAAgAACAAAEABAAAQAAAAIAA=</HashCode>
+      <FileName>Entities\Video.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Infrastructure.DalDependancyProvider" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\DalDependancyProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiTube.DAL.Repositories.CommentRepository" Collapsed="true">
+    <Position X="9.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAgAAAAAAQAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Repositories\CommentRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTube.DAL.Repositories.GenericRepository&lt;T&gt;" Collapsed="true">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAIAAAAAAEAAAAAAAAgAAAAAAAAgACgAAAIAAAIA=</HashCode>
+      <FileName>Repositories\GenericRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTube.DAL.Repositories.InteractionRepository" Collapsed="true">
+    <Position X="16.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Repositories\InteractionRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTube.DAL.Repositories.PlaylistRepository" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAQAAEAAAAIAI=</HashCode>
+      <FileName>Repositories\PlaylistRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTube.DAL.Repositories.SubscriptionRepository" Collapsed="true">
+    <Position X="5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEIQA=</HashCode>
+      <FileName>Repositories\SubscriptionRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTube.DAL.Repositories.UsercredentialsRepository" Collapsed="true">
+    <Position X="7.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQQIAA=</HashCode>
+      <FileName>Repositories\UsercredentialsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTube.DAL.Repositories.UserRepository" Collapsed="true">
+    <Position X="11.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAQAAIAAAAAQAAAAAAAIAA=</HashCode>
+      <FileName>Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MiTube.DAL.Repositories.VideoRepository" Collapsed="true">
+    <Position X="14" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAQAAIAAAAAQAAAAAAAIAI=</HashCode>
+      <FileName>Repositories\VideoRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="MiTube.DAL.Interfaces.ICommentRepository" Collapsed="true">
+    <Position X="2.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAgAAAAAAQAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Interfaces\ICommentRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.DAL.Interfaces.IInteractionRepository" Collapsed="true">
+    <Position X="7.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Interfaces\IInteractionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.DAL.Interfaces.IPlaylistRepository" Collapsed="true">
+    <Position X="11.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAQAAEAAAAIAI=</HashCode>
+      <FileName>Interfaces\IPlaylistRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.DAL.Interfaces.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="8.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAEAAAAAAAAgAAAAAAAAgAAgAAAIAAAIA=</HashCode>
+      <FileName>Interfaces\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.DAL.Interfaces.ISubscriptionRepository" Collapsed="true">
+    <Position X="14" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEIQA=</HashCode>
+      <FileName>Interfaces\ISubscriptionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.DAL.Interfaces.IUsercredentialsRepository" Collapsed="true">
+    <Position X="16.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQQIAA=</HashCode>
+      <FileName>Interfaces\IUsercredentialsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.DAL.Interfaces.IUserRepository" Collapsed="true">
+    <Position X="5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAQAAIAAAAAQAAAAAAAIAA=</HashCode>
+      <FileName>Interfaces\IUserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MiTube.DAL.Interfaces.IVideoRepository" Collapsed="true">
+    <Position X="9.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAQAAIAAAAAQAAAAAAAIAI=</HashCode>
+      <FileName>Interfaces\IVideoRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

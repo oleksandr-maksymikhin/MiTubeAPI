@@ -1,16 +1,8 @@
 ﻿using AutoMapper;
-using Azure.Storage.Blobs;
-using Microsoft.AspNetCore.Http;
 using MiTube.BLL.DTO;
 using MiTube.BLL.Interfaces;
 using MiTube.DAL.Entities;
 using MiTube.DAL.Interfaces;
-using MiTube.DAL.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiTube.BLL.Services
 {
